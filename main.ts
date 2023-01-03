@@ -1,10 +1,15 @@
 radio.onReceivedString(function (receivedString) {
-    serial.writeLine(receivedString)
+    if (receivedString != lastMessage) {
+        serial.writeLine(receivedString)
+        lastMessage = receivedString
+    }
 })
-serial.setBaudRate(BaudRate.BaudRate9600)
+let lastMessage = ""
+lastMessage = ""
+serial.setBaudRate(BaudRate.BaudRate115200)
 serial.setTxBufferSize(128)
-radio.setFrequencyBand(42)
 radio.setGroup(1)
+radio.setFrequencyBand(42)
 basic.forever(function () {
 	
 })
