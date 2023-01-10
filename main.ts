@@ -9,7 +9,7 @@ lastMessage = ""
 serial.setBaudRate(BaudRate.BaudRate115200)
 serial.setTxBufferSize(128)
 radio.setGroup(1)
-radio.setFrequencyBand(42)
+radio.setFrequencyBand(70)
 basic.forever(function () {
 	
 })
