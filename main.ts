@@ -11,6 +11,9 @@ serial.setBaudRate(BaudRate.BaudRate115200)
 serial.setTxBufferSize(128)
 radio.setGroup(1)
 radio.setFrequencyBand(70)
+loops.everyInterval(10000, function () {
+    serial.writeLine("ping")
+})
 basic.forever(function () {
 	
 })
