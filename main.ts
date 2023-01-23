@@ -1,7 +1,7 @@
 radio.onReceivedString(function (receivedString) {
     if (receivedString != lastMessage) {
         serial.writeLine(receivedString)
-        serial.writeLine("rssi " + radio.receivedPacket(RadioPacketProperty.SignalStrength))
+        serial.writeLine("" + receivedString.split("/")[0] + "/rssi " + radio.receivedPacket(RadioPacketProperty.SignalStrength))
         lastMessage = receivedString
     }
 })
